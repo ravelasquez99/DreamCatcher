@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8150" systemVersion="15A204g" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8122"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -12,16 +13,71 @@
                         <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                    <view key="view" contentMode="scaleAspectFit" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sleepImage" translatesAutoresizingMaskIntoConstraints="NO" id="hTw-nl-atb">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="178" id="OfB-Qx-F2Q"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="220" id="TTS-ln-h1m"/>
+                                    <constraint firstAttribute="width" constant="240" id="Vac-JD-3a9">
+                                        <variation key="widthClass=compact" constant="166"/>
+                                    </constraint>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="OfB-Qx-F2Q"/>
+                                        <exclude reference="TTS-ln-h1m"/>
+                                        <exclude reference="Vac-JD-3a9"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="OfB-Qx-F2Q"/>
+                                        <exclude reference="TTS-ln-h1m"/>
+                                        <include reference="Vac-JD-3a9"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.22735484140000001" green="0.46805248869999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="hTw-nl-atb" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="7dd-C2-svJ"/>
+                            <constraint firstItem="hTw-nl-atb" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="l9b-uT-spf"/>
+                            <constraint firstItem="hTw-nl-atb" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="171" id="yn3-5b-L7d">
+                                <variation key="widthClass=compact" constant="200"/>
+                            </constraint>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="hTw-nl-atb"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="7dd-C2-svJ"/>
+                                <exclude reference="l9b-uT-spf"/>
+                                <exclude reference="yn3-5b-L7d"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="hTw-nl-atb"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="7dd-C2-svJ"/>
+                                <include reference="l9b-uT-spf"/>
+                                <include reference="yn3-5b-L7d"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.5" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="sleepImage" width="99" height="105"/>
+    </resources>
 </document>
